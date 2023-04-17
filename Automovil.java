@@ -1,66 +1,59 @@
 import java.awt.*;
-import java.util.ArrayList;
 
-public class Automovil {
+public class Automovil extends Vehiculo{
+    protected String marca;
+    protected int modelo;
+    protected Color color;
 
-        //Crear los atributos
-        private String marcaAuto;
-        private String subMarca;
-        private byte modeloAuto; //2000 + byte
-        private Color colorAuto;
+    public Automovil() {
+    }
 
-        public Automovil() {
-        }
+    public Automovil(String tipo, String combusttible, String terreno, String marca, int modelo, Color color) {
+        super(tipo, combusttible, terreno);
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+    }
 
-        public Automovil(String marca, String subMarca, byte modelo, Color color) {
-                this.marcaAuto = marca;
-                this.subMarca = subMarca;
-                this.modeloAuto = modelo;
-                this.colorAuto = color;
-        }
+    public String getMarca() {
+        return marca;
+    }
 
-        public String getMarcaAuto() {
-                return marcaAuto;
-        }
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
-        public void setMarcaAuto(String marcaAuto) {
-                ArrayList<String> marcasAuto= new ArrayList<>();
-                marcasAuto.add("ASTON MARTION");
-                marcasAuto.add("FERRARI");
-                marcasAuto.add("MERCEDES");
-                marcasAuto.add("MCLAREN");
-                marcasAuto.add("ALFA ROMEO");
-                marcasAuto.add("RENAULT");
-                marcasAuto.add("HONDA");
+    public int getModelo() {
+        return modelo;
+    }
 
-                if (marcasAuto.contains(marcaAuto.toUpperCase())) {
-                        this.marcaAuto = marcaAuto;
-                } else {
-                        System.out.println("Esta marca no existe");
-                }
-        }
+    public void setModelo(int modelo) {
+        this.modelo = modelo;
+    }
 
-        public String getSubMarca() {
-                return subMarca;
-        }
+    public Color getColor() {
+        return color;
+    }
 
-        public void setSubMarca(String subMarca) {
-                this.subMarca = subMarca;
-        }
+    public void setColor(Color color) {
+        this.color = color;
+    }
 
-        public byte getModeloAuto() {
-                return modeloAuto;
-        }
-
-        public void setModeloAuto(byte modeloAuto) {
-                this.modeloAuto = modeloAuto;
-        }
-
-        public Color getColorAuto() {
-                return colorAuto;
-        }
-
-        public void setColorAuto(Color colorAuto) {
-                this.colorAuto = colorAuto;
-        }
+    @Override
+    public String toString() {
+        return "Automovil{" +
+                "marca='" + marca + '\'' +
+                ", modelo=" + modelo +
+                ", color=" + color +
+                ", tipo='" + tipo + '\'' +
+                ", combusttible='" + combusttible + '\'' +
+                ", terreno='" + terreno + '\'' +
+                '}';
+    }
+    public void colocarFreno(){
+        System.out.println("Freno de mano");
+    }
+    public void cambiarAceite(){
+        System.out.println("Cambio de aceite");
+    }
 }
