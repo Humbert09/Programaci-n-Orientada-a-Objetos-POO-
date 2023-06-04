@@ -5,20 +5,20 @@ import project.poo.modelo.ModeloTablaDulce;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class Ventana extends JFrame {
 
-    private JLabel lblId;
+
     private JLabel lblNombre;
     private JLabel lblMarca;
     private JLabel lblTipo;
     private JLabel lblSabor;
     private JLabel lblUrlFoto;
     private JLabel lblImagenDulce;
-    private JTextField txtId;
+
     private JTextField txtNombre;
     private JTextField txtMarca;
     private JTextField txtTipo;
@@ -39,33 +39,37 @@ public class Ventana extends JFrame {
     private ArrayList<Dulce> info;
 
 
+
+
+
+
     public Ventana(String title) throws HeadlessException {
         super(title);
-        this.setSize(1200, 800);//Tamano de la ventana
+        this.setSize(1300, 800);//Tamano de la ventana
 
         layout = new GridLayout(2, 2);//Division de la ventana
         this.getContentPane().setLayout(layout);
+
+
+
 
 //Panel 1
         panel1 = new JPanel(new FlowLayout());
         panel1.setBackground(new Color(0xFFFBB6D1, true));
         this.getContentPane().add(panel1, 0);
-        lblId = new JLabel("Id:");
+
         lblNombre = new JLabel("Nombre:");
         lblMarca = new JLabel("Marca:");
         lblTipo = new JLabel("Tipo:");
         lblSabor = new JLabel("Sabor:");
         lblUrlFoto = new JLabel("URL Foto:");
-        txtId = new JTextField(10);
-        txtId.setText("0");
-        txtId.setEnabled(false);
+
         txtNombre = new JTextField(10);
         txtMarca = new JTextField(10);
         txtTipo = new JTextField(10);
         txtSabor = new JTextField(10);
         txtUrlFoto = new JTextField(30);
-        panel1.add(lblId);
-        panel1.add(txtId);
+
         panel1.add(lblNombre);
         panel1.add(txtNombre);
         panel1.add(lblMarca);
@@ -114,13 +118,7 @@ public class Ventana extends JFrame {
         this.setVisible(true);
     }
 
-    public JLabel getLblId() {
-        return lblId;
-    }
 
-    public void setLblId(JLabel lblId) {
-        this.lblId = lblId;
-    }
 
     public JLabel getLblNombre() {
         return lblNombre;
@@ -170,13 +168,7 @@ public class Ventana extends JFrame {
         this.lblImagenDulce = lblImagenDulce;
     }
 
-    public JTextField getTxtId() {
-        return txtId;
-    }
 
-    public void setTxtId(JTextField txtId) {
-        this.txtId = txtId;
-    }
 
     public JTextField getTxtNombre() {
         return txtNombre;
@@ -319,17 +311,21 @@ public class Ventana extends JFrame {
         return btnActualizar;
     }
 
+
+
     public void setBtnActualizar(JButton btnActualizar) {
         this.btnActualizar = btnActualizar;
 
     }
 
     public void limpiar(){
-        txtId.setText("");
+
         txtNombre.setText("");
         txtMarca.setText("");
         txtTipo.setText("");
         txtSabor.setText("");
         txtUrlFoto.setText("");
     }
+
+
 }
